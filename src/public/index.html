@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bees</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      header,
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+      }
+      main {
+        display: flex;
+        flex: 1;
+      }
+      .content {
+        flex: 3;
+        padding: 1rem;
+        background-color: #f0f0f0;
+      }
+      .sidebar {
+        flex: 1;
+        padding: 1rem;
+        background-color: #ddd;
+      }
+      @media (max-width: 768px) {
+        main {
+          flex-direction: column;
+        }
+        .sidebar {
+          order: -1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Bees</h1>
+    </header>
+    <main>
+      <div class="content">
+        <h2>Main Content</h2>
+        <p>
+          This is the main content area. It takes up most of the space on larger
+          screens.
+        </p>
+      </div>
+      <div class="sidebar">
+        <h2>Sidebar</h2>
+        <p>
+          This is the sidebar. On smaller screens, it will appear above the main
+          content.
+        </p>
+      </div>
+    </main>
+    <footer>
+      <p>Footer</p>
+    </footer>
+  </body>
+</html>
+<!-- TODO: aws to host? -->
