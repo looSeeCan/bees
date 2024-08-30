@@ -29,13 +29,15 @@ main {
 aside {
   flex: 1;
   padding: 1rem;
+
   /* background-color: rgb(209, 169, 94); */
-  background-image: url("../..assets/winter_cluster.png");
+  background-image: url("/assets/winter_cluster.png");
+  background-repeat: no-repeat;
 }
 
 .aside_div {
   /* background-color: red; */
-  /* background-image: url("../../assets/winter_cluster.png"); */
+  /* background-image: url("/assets/winter_cluster.png"); */
 }
 section {
   flex: 5;
