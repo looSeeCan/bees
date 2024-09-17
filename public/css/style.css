@@ -1,83 +1,164 @@
 * {
-  box-sizing: border-box;
-  outline: 1px red dashed;
-  /* margin: 2px; */
-  /* padding: 2px; */
+  outline: red 1px dashed;
 }
-
+/* TODO: come back and fix global styles where necessary. satisfactory for now */
 body {
-  display: flex;
-  min-height: 100vh;
-  /* flex-direction: row; */
-  /* flex-direction: column; */
+  /* background-color: lavenderblush; */
   margin: 0;
-}
-
-/* nav */
-.outer-col-1 {
-  background: #d7e8d4;
-  flex: 1;
-}
-
-/* div */
-.outer-col-2 {
+  padding: 0;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
-  /* flex-direction: row; */
-
-  flex: 5;
-}
-/* header */
-/* div */
-.inner-row {
-  display: flex;
-  /* flex: 5; */
-  /* flex-direction: column; */
-  /* flex-direction: row; */
 }
 
-.inner-col {
-  flex: 4;
-}
-
-.inner-row article {
-  min-height: 60vh;
-}
-
-.inner-row aside {
-  background: beige;
-  flex: 1;
-}
-
-header,
-footer {
-  background: yellowgreen;
-  height: 20vh;
-}
-
-header,
-footer,
-article,
-nav,
-aside {
-  padding: 1em;
-}
-
-@media (max-width: 768px) {
+/* for large screens */
+@media screen and (min-width: 1200px) {
   body {
+    background-color: lightblue;
+  }
+
+  .container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+  }
+
+  .header {
+    grid-area: 1 / 1 / 2 / 4;
+  }
+
+  .nav {
+    grid-area: 2 / 1 / 5 / 2;
+  }
+
+  .footer {
+    grid-area: 4 / 2 / 5 / 5;
+  }
+
+  .aside {
+    grid-area: 1 / 4 / 4 / 5;
+  }
+
+  .main {
+    grid-area: 2 / 2 / 4 / 4;
+  }
+
+  /* min-heigt: 100vh is will act as global. Have to put this setting here to couteract */
+  .header,
+  .nav,
+  .main,
+  .aside,
+  .footer {
+    min-height: auto;
+    flex: 1;
+  }
+}
+
+/* tablet/medium screens */
+/* Media query for large screens (1200px and up) */
+@media screen and (min-width: 1200px) {
+  body {
+    background-color: lightblue;
+  }
+
+  .container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+  }
+
+  .header,
+  .nav,
+  .main,
+  .aside,
+  .footer {
+    min-height: auto;
+  }
+
+  .header {
+    grid-area: 1 / 1 / 2 / 4;
+  }
+
+  .nav {
+    grid-area: 2 / 1 / 5 / 2;
+  }
+
+  .footer {
+    grid-area: 4 / 2 / 5 / 5;
+  }
+
+  .aside {
+    grid-area: 1 / 4 / 4 / 5;
+  }
+
+  .main {
+    grid-area: 2 / 2 / 4 / 4;
+  }
+}
+
+/* tablet/medium */
+@media only screen and (min-width: 600px) and (max-width: 1199px) {
+  body {
+    background-color: lightcoral; /* Example background change for tablets */
+  }
+
+  .container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Two-column layout */
+    grid-template-rows: auto auto auto; /* Adjust rows */
+    gap: 10px; /* Space between elements */
+  }
+
+  .header {
+    grid-column: 1 / 3; /* Span both columns */
+    height: 100px; /* Set a fixed height for the header */
+  }
+
+  .nav {
+    grid-column: 1 / 2; /* First column */
+    grid-row: 2 / 3;
+  }
+
+  .main {
+    grid-column: 2 / 3; /* Second column */
+    grid-row: 2 / 3;
+  }
+
+  .aside {
+    grid-column: 1 / 2; /* First column */
+    grid-row: 3 / 4;
+  }
+
+  .footer {
+    grid-column: 2 / 3; /* Second column */
+    grid-row: 3 / 4;
+    height: 100px;
+  }
+}
+
+@media (max-width: 599px) {
+  .container {
+    /* background-color: bisque; */
+    min-height: 100vh;
+    display: flex;
     flex-direction: column;
   }
 
-  .inner-row {
-    flex-direction: column;
-  }
-
-  .inner-row aside {
-    order: -1;
-    background-color: aqua;
-  }
-
-  .outer-col-2 {
-    /* flex-direction: row; */
+  .header,
+  .nav,
+  .main,
+  .aside,
+  .footer {
+    /* background-color: red; */
+    min-height: 100vh;
+    flex: 1;
   }
 }

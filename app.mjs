@@ -3,10 +3,10 @@ import path from "node:path";
 
 const app = express();
 
-app.use(express.static(path.join(process.cwd(), "public")));
+app.use(express.static(path.join(process.cwd(), "dist")));
 
-app.get("/", (req, res) => {
-  res.sendFile(`${process.cwd()}/public/index.html`);
+app.get("*", (req, res) => {
+  res.sendFile(`${process.cwd()}, "dist", "index.html"`);
 });
 
 const PORT = process.env.PORT || 5001;
